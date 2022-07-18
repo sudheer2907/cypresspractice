@@ -1,6 +1,6 @@
-import InputFormsTabHelper from '../../support/helper/seleniumeasy/InputFormsTabHelper';
+import InputFormsTabHelper from '../../fixtures/helper/seleniumeasy/InputFormsTabHelper';
 const inputFormsTabHelper = new InputFormsTabHelper();
-import ProgressHelper from '../../support/helper/seleniumeasy/ProgressHelper';
+import ProgressHelper from '../../fixtures/helper/seleniumeasy/ProgressHelper';
 const progressHelper = new ProgressHelper()
 
 describe('Test Table Tab', function () {

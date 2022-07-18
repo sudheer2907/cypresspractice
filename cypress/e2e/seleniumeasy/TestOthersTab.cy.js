@@ -1,6 +1,6 @@
-import InputFormsTabHelper from '../../support/helper/seleniumeasy/InputFormsTabHelper';
+import InputFormsTabHelper from '../../fixtures/helper/seleniumeasy/InputFormsTabHelper';
 const inputFormsTabHelper = new InputFormsTabHelper()
-import OthersTabHelper from '../../support/helper/seleniumeasy/OthersTabHelper';
+import OthersTabHelper from '../../fixtures/helper/seleniumeasy/OthersTabHelper';
 const othersTabHelper = new OthersTabHelper()
 
 describe("Test seleniumeasy demo website", function () {

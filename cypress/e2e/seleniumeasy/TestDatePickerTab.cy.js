@@ -1,6 +1,6 @@
-import InputFormsTabHelper from '../../support/helper/seleniumeasy/InputFormsTabHelper';
+import InputFormsTabHelper from '../../fixtures/helper/seleniumeasy/InputFormsTabHelper';
 const inputFormsTabHelper = new InputFormsTabHelper()
-import DatePickerHelper from '../../support/helper/seleniumeasy/DatePickerHelper';
+import DatePickerHelper from '../../fixtures/helper/seleniumeasy/DatePickerHelper';
 const datePickerHelper = new DatePickerHelper()
 
 describe("Test Date Picker tav of selenium easy demo website", function () {

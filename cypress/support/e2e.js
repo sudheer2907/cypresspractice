@@ -19,3 +19,4 @@ import 'cypress-mochawesome-reporter/register';
 import "cypress-real-events/support";
 
 require("cypress-xpath");
+require('cypress-plugin-tab');
