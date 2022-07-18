@@ -25,6 +25,29 @@ class CypressBaseHelper {
         return datetime.toString();
     };
 
+    clickWebElement(locater) {
+        if (locater.charAt(0) == "/") {
+            cy.xpath(locater).click();
+        } else {
+            cy.get(locater).click();
+        }
+    };
+
+    isElementVisible(locater) {
+        if (locater.charAt(0) == "/") {
+            cy.xpath(xpathLocater).should('be.visible');
+        } else {
+            cy.get(locater).should('be.visible');
+        }
+    };
+
+    sendKeys(locater, value) {
+        if (locater.charAt(0) == "/") {
+            cy.xpath(xpathLocater).type(value);
+        } else {
+            cy.get(locater).type(value);
+        }
+    };
 }
 
 export default CypressBaseHelper;

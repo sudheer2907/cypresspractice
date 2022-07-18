@@ -1,16 +1,14 @@
-import InputFormsTabHelper from '../../fixtures/helper/seleniumeasy/InputFormsTabHelper';
-const inputFormsTabHelper = new InputFormsTabHelper()
 import AlertsAndModalsTabHelper from '../../fixtures/helper/seleniumeasy/AlertsAndModalsTabHelper';
 const alertsAndModalsTabHelper = new AlertsAndModalsTabHelper()
 
 describe('Test Alerts And Models tab', function () {
 
     beforeEach(() => {
-        cy.visit(Cypress.env('baseurl'));
-        cy.xpath('//a[contains(text(),"No, thanks!")]').click();
+        cy.visit('https://demo.seleniumeasy.com/');
+        //cy.xpath('//a[contains(text(),"No, thanks!")]').click();
     });
 
-    it('Test Bootstrap alerts', function () {
+    it.only('Test Bootstrap alerts', function () {
         alertsAndModalsTabHelper.clickOnAlertAndModalsTab();
         alertsAndModalsTabHelper.clickOnSubTabBootStrapAlerts();
         alertsAndModalsTabHelper.isBootStrapAlertsPageDisplayed();

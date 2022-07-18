@@ -1,104 +1,106 @@
-class AlertsAndModalsTabHelper {
+import CypressBaseHelper from "../basehelper/CypressBaseHelper";
 
-clickOnAlertAndModalsTab() {
-cy.xpath("//a[@class='dropdown-toggle'][normalize-space()='Alerts & Modals']").click();
-}
+class AlertsAndModalsTabHelper extends CypressBaseHelper {
 
-clickOnSubTabBootStrapAlerts() {
-cy.xpath("//ul[@class='dropdown-menu']//a[normalize-space()='Bootstrap Alerts']").click();
-}
+    clickOnAlertAndModalsTab() {
+        super.clickWebElement("//a[@class='dropdown-toggle'][normalize-space()='Alerts & Modals']");
+    }
 
-isBootStrapAlertsPageDisplayed() {
-cy.xpath("//h2[normalize-space()='Bootstrap Alert messages']").should('be.visible');
-}
+    clickOnSubTabBootStrapAlerts() {
+        super.clickWebElement("//ul[@class='dropdown-menu']//a[normalize-space()='Bootstrap Alerts']");
+    }
 
-clickOnAutoclosablebtnsuccessbutton() {
-cy.get('#autoclosable-btn-success').click();
-}
+    isBootStrapAlertsPageDisplayed() {
+        super.isElementVisible("//h2[normalize-space()='Bootstrap Alert messages']");
+    }
 
-isAutoclosableAlertMessageDisplayed() {
-cy.get('.alert.alert-success.alert-autocloseable-success').should('be.visible');
-}
+    clickOnAutoclosablebtnsuccessbutton() {
+        super.clickWebElement('#autoclosable-btn-success');
+    }
 
-clickOnNormalMessageButton() {
-cy.get('#normal-btn-success').click();
-}
+    isAutoclosableAlertMessageDisplayed() {
+        super.isElementVisible('.alert.alert-success.alert-autocloseable-success');
+    }
 
-isNormalAlertMessageDisplayed() {
-cy.get('.alert.alert-success.alert-normal-success').should('be.visible');
-}
+    clickOnNormalMessageButton() {
+        cy.get('#normal-btn-success').click();
+    }
 
-clickOnNormalInfoMessageButton() {
-cy.get('#normal-btn-info').click();
-}
+    isNormalAlertMessageDisplayed() {
+        cy.get('.alert.alert-success.alert-normal-success').should('be.visible');
+    }
 
-isNormalInfoAlertMessageDisplayed() {
-cy.get('.alert.alert-info.alert-normal-info').should('be.visible');
-}
+    clickOnNormalInfoMessageButton() {
+        cy.get('#normal-btn-info').click();
+    }
 
-closeNormalInfoAlertsMessage() {
-cy.xpath("//div[@class='alert alert-info alert-normal-info']//button[@type='button'][normalize-space()='×']").click();
-}
+    isNormalInfoAlertMessageDisplayed() {
+        cy.get('.alert.alert-info.alert-normal-info').should('be.visible');
+    }
 
-clickOnSubTabBootStrapModals() {
-cy.xpath("//ul[@class='dropdown-menu']//a[normalize-space()='Bootstrap Modals']").click();
-}
+    closeNormalInfoAlertsMessage() {
+        cy.xpath("//div[@class='alert alert-info alert-normal-info']//button[@type='button'][normalize-space()='×']").click();
+    }
 
-isBootStrapModalsPageDisplayed() {
-cy.xpath("//h2[normalize-space()='Bootstrap Modal Example for Automation']").should('be.visible');
-}
+    clickOnSubTabBootStrapModals() {
+        cy.xpath("//ul[@class='dropdown-menu']//a[normalize-space()='Bootstrap Modals']").click();
+    }
 
-clickLaunchModelButtonUnderSingleMode(){
-cy.xpath("//div[contains(text(),'Single Modal Example')]/../div/a[contains(text(),'Launch modal')]").click();
-}
+    isBootStrapModalsPageDisplayed() {
+        cy.xpath("//h2[normalize-space()='Bootstrap Modal Example for Automation']").should('be.visible');
+    }
 
-isModelTitleDisplayed() {
-cy.get("div[id='myModal0'] h4[class='modal-title']").should('be.visible');
-}
+    clickLaunchModelButtonUnderSingleMode() {
+        cy.xpath("//div[contains(text(),'Single Modal Example')]/../div/a[contains(text(),'Launch modal')]").click();
+    }
 
-clickOnSaveChangesButtonOfModelTitle() {
-cy.get("div[id='myModal0'] a[class='btn btn-primary']").click();
-}
+    isModelTitleDisplayed() {
+        cy.get("div[id='myModal0'] h4[class='modal-title']").should('be.visible');
+    }
 
-clickLaunchModelButtonUnderMultiMode(){
-cy.get("a[href='#myModal']").click();
-}
+    clickOnSaveChangesButtonOfModelTitle() {
+        cy.get("div[id='myModal0'] a[class='btn btn-primary']").click();
+    }
 
-isFirstModelDisplayed() {
-cy.get("div[id='myModal'] h4[class='modal-title']").should('be.visible');
-}
+    clickLaunchModelButtonUnderMultiMode() {
+        cy.get("a[href='#myModal']").click();
+    }
 
-clickOnInternalLaunchModelOfMultiModel() {
-cy.get("div[class='modal-body'] a[class='btn btn-primary']").click();
-}
+    isFirstModelDisplayed() {
+        cy.get("div[id='myModal'] h4[class='modal-title']").should('be.visible');
+    }
 
-isModelTwodDisplayed() {
-cy.get("div[id='myModal2'] h4[class='modal-title']").should('be.visible');
-}
+    clickOnInternalLaunchModelOfMultiModel() {
+        cy.get("div[class='modal-body'] a[class='btn btn-primary']").click();
+    }
 
-closeModelTwoDAlerts() {
-cy.get("div[id='myModal2'] a[class='btn btn-primary']").click();
-}
+    isModelTwodDisplayed() {
+        cy.get("div[id='myModal2'] h4[class='modal-title']").should('be.visible');
+    }
 
-clickOnTheSubTabFileDownload() {
-cy.xpath("//ul[@class='dropdown-menu']//a[normalize-space()='File Download']").click();
-}
+    closeModelTwoDAlerts() {
+        cy.get("div[id='myModal2'] a[class='btn btn-primary']").click();
+    }
 
-isFileDownloadPageDisplayed() {
-cy.xpath("//h2[normalize-space()='File Download Demo for Automation']").should('be.visible');
-}
+    clickOnTheSubTabFileDownload() {
+        cy.xpath("//ul[@class='dropdown-menu']//a[normalize-space()='File Download']").click();
+    }
 
-enterDataDescriptions(descriptions) {
-cy.get('#textbox').type(descriptions);
-}
+    isFileDownloadPageDisplayed() {
+        cy.xpath("//h2[normalize-space()='File Download Demo for Automation']").should('be.visible');
+    }
 
-clickOnGenerateButton() {
-cy.get('#create').click();
-}
+    enterDataDescriptions(descriptions) {
+        cy.get('#textbox').type(descriptions);
+    }
 
-clickOnDownloadButton() {
-cy.xpath("//a[@id='link-to-download']").click();
-}
+    clickOnGenerateButton() {
+        cy.get('#create').click();
+    }
+
+    clickOnDownloadButton() {
+        cy.xpath("//a[@id='link-to-download']").click();
+    }
 }
 
 export default AlertsAndModalsTabHelper;
