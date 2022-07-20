@@ -48,6 +48,10 @@ class CypressBaseHelper {
             cy.get(locater).type(value);
         }
     };
+
+    printmessage(message) {
+        cy.log(message);
+    }
 }
 
 export default CypressBaseHelper;

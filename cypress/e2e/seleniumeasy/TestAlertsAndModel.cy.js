@@ -5,7 +5,7 @@ describe('Test Alerts And Models tab', function () {
 
     beforeEach(() => {
         cy.visit('https://demo.seleniumeasy.com/');
-        //cy.xpath('//a[contains(text(),"No, thanks!")]').click();
+        cy.xpath('//a[contains(text(),"No, thanks!")]').click();
     });
 
     it.only('Test Bootstrap alerts', function () {
