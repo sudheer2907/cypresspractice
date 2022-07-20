@@ -1,9 +1,10 @@
 import InputFormsTabHelper from '../../fixtures/helper/seleniumeasy/InputFormsTabHelper';
-const inputFormsTabHelper = new InputFormsTabHelper();
 import ProgressHelper from '../../fixtures/helper/seleniumeasy/ProgressHelper';
-const progressHelper = new ProgressHelper()
 
 describe('Test Table Tab', function () {
+
+    const progressHelper = new ProgressHelper();
+    const inputFormsTabHelper = new InputFormsTabHelper();
 
     it('Test JQuery Download Progress bars', function () {
         inputFormsTabHelper.loginToThePage();
@@ -33,11 +34,7 @@ describe('Test Table Tab', function () {
         progressHelper.verifyFirstSliderValue(20);
         progressHelper.slideFirstSlider(100);
         progressHelper.verifyFirstSliderValue(100);
-
         progressHelper.slideSecondSlider(20);
         progressHelper.verifySecondSliderValue(20);
     });
-
-
-
 })

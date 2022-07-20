@@ -1,9 +1,10 @@
 import InputFormsTabHelper from '../../fixtures/helper/seleniumeasy/InputFormsTabHelper';
-const inputFormsTabHelper = new InputFormsTabHelper();
 import TableHelper from '../../fixtures/helper/seleniumeasy/TableHelper';
-const tableHelper = new TableHelper()
 
 describe('Test Table Tab', function () {
+
+    const tableHelper = new TableHelper();
+    const inputFormsTabHelper = new InputFormsTabHelper();
 
     it('Test Table Pagination', function () {
         inputFormsTabHelper.loginToThePage();
@@ -14,5 +15,4 @@ describe('Test Table Tab', function () {
         tableHelper.jumpNextPage();
         tableHelper.isPageButtonSelected(2);
     });
-
 })

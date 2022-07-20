@@ -1,4 +1,4 @@
-class CypressBaseHelper {
+class BaseHelper {
 
     getIframeDocument() {
         return cy
@@ -54,4 +54,4 @@ class CypressBaseHelper {
     }
 }
 
-export default CypressBaseHelper;
+export default BaseHelper;

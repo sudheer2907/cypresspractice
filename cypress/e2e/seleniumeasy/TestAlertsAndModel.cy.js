@@ -1,7 +1,8 @@
 import AlertsAndModalsTabHelper from '../../fixtures/helper/seleniumeasy/AlertsAndModalsTabHelper';
-const alertsAndModalsTabHelper = new AlertsAndModalsTabHelper()
 
 describe('Test Alerts And Models tab', function () {
+
+    var alertsAndModalsTabHelper = new AlertsAndModalsTabHelper();
 
     beforeEach(() => {
         cy.visit('https://demo.seleniumeasy.com/');

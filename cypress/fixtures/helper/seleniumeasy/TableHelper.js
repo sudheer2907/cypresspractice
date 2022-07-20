@@ -1,32 +1,34 @@
-class TableHelper {
+import BaseHelper from "../basehelper/BaseHelper";
 
-clickOnTableTab() {
-cy.xpath('//a[@class="dropdown-toggle"][normalize-space()="Table"]').click();
-}
+class TableHelper extends BaseHelper {
 
-clickOnTableSubTab(subtab) {
-cy.xpath("//ul[@class='dropdown-menu']//a[normalize-space()='"+subtab+"']").click();
-}
+    clickOnTableTab() {
+        cy.xpath('//a[@class="dropdown-toggle"][normalize-space()="Table"]').click();
+    };
 
-isTablePaginationPageDisplayed() {
-cy.xpath("//h2[normalize-space()='Table with Pagination Example']").should('be.visible');
-}
+    clickOnTableSubTab(subtab) {
+        cy.xpath("//ul[@class='dropdown-menu']//a[normalize-space()='" + subtab + "']").click();
+    };
 
-isTableContentCorrect(index) {
-cy.xpath("//td[normalize-space()='"+index+"']/../td[1]").contains(index);
-cy.xpath("//td[normalize-space()='"+index+"']/../td[2]").contains('Table cell');
-cy.xpath("//td[normalize-space()='"+index+"']/../td[3]").contains('Table cell');
-cy.xpath("//td[normalize-space()='"+index+"']/../td[4]").contains('Table cell');
-cy.xpath("//td[normalize-space()='"+index+"']/../td[5]").contains('Table cell');
-}
+    isTablePaginationPageDisplayed() {
+        cy.xpath("//h2[normalize-space()='Table with Pagination Example']").should('be.visible');
+    };
 
-jumpNextPage() {
-cy.get('.next_link').click();
-}
+    isTableContentCorrect(index) {
+        cy.xpath("//td[normalize-space()='" + index + "']/../td[1]").contains(index);
+        cy.xpath("//td[normalize-space()='" + index + "']/../td[2]").contains('Table cell');
+        cy.xpath("//td[normalize-space()='" + index + "']/../td[3]").contains('Table cell');
+        cy.xpath("//td[normalize-space()='" + index + "']/../td[4]").contains('Table cell');
+        cy.xpath("//td[normalize-space()='" + index + "']/../td[5]").contains('Table cell');
+    };
 
-isPageButtonSelected(pageNum) {
-cy.get("li[class='active'] a[class='page_link']").contains(pageNum);
-}
+    jumpNextPage() {
+        cy.get('.next_link').click();
+    };
+
+    isPageButtonSelected(pageNum) {
+        cy.get("li[class='active'] a[class='page_link']").contains(pageNum);
+    };
 
 }
 

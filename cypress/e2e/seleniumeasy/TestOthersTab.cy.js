@@ -1,9 +1,10 @@
 import InputFormsTabHelper from '../../fixtures/helper/seleniumeasy/InputFormsTabHelper';
-const inputFormsTabHelper = new InputFormsTabHelper()
 import OthersTabHelper from '../../fixtures/helper/seleniumeasy/OthersTabHelper';
-const othersTabHelper = new OthersTabHelper()
 
 describe("Test seleniumeasy demo website", function () {
+
+    const othersTabHelper = new OthersTabHelper();
+    const inputFormsTabHelper = new InputFormsTabHelper();
 
     it('Login to the page', function () {
         inputFormsTabHelper.loginToThePage();
